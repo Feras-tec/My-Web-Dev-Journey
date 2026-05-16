@@ -76,10 +76,20 @@ const Hero = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-            <button className="btn btn-primary gap-2 shadow-lg shadow-primary/20">
+            <a
+              href="https://maxpro3d.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-primary gap-2 shadow-lg shadow-primary/20 inline-flex items-center justify-center"
+            >
               View My Projects <ArrowRight size={16} />
-            </button>
-            <button className="btn btn-outline">Contact Me</button>
+            </a>
+            <a
+              href="#contact"
+              className="btn btn-outline inline-flex items-center justify-center"
+            >
+              Contact Me
+            </a>
           </div>
         </div>
       </div>
