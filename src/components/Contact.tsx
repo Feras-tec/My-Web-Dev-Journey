@@ -66,16 +66,23 @@ const Contact = () => {
 
           {/* Right Side: Contact Form */}
           <div className="card bg-base-200 shadow-xl border border-base-300 w-full">
+            {/* التعديل الأساسي هنا: إضافة الخصائص لوسم الفورم */}
             <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
               className="card-body gap-5 p-6 md:p-8"
-              onSubmit={(e) => e.preventDefault()}
             >
+              {/* حقل مخفي مطلوب لعمل Netlify Forms مع React بشكل سليم */}
+              <input type="hidden" name="form-name" value="contact" />
+
               <div className="form-control w-full">
                 <label className="label py-1">
                   <span className="label-text font-semibold">Your Name</span>
                 </label>
                 <input
                   type="text"
+                  name="name"
                   placeholder="John Doe"
                   className="input input-bordered w-full bg-base-100 focus:input-primary transition-all duration-200"
                   required
@@ -88,6 +95,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="john@example.com"
                   className="input input-bordered w-full bg-base-100 focus:input-primary transition-all duration-200"
                   required
@@ -99,6 +107,7 @@ const Contact = () => {
                   <span className="label-text font-semibold">Message</span>
                 </label>
                 <textarea
+                  name="message"
                   rows={4}
                   placeholder="Type your message here..."
                   className="textarea textarea-bordered w-full bg-base-100 focus:textarea-primary resize-none transition-all duration-200"
