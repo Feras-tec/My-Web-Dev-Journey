@@ -50,6 +50,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-16 bg-base-200 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
+        {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="relative mb-4 group">
             <div className="absolute inset-0 bg-red-500 rounded-full blur-md opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
@@ -72,6 +73,7 @@ const Projects = () => {
           </p>
         </div>
 
+        {/* Projects Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectList.map((project, index) => (
             <div
@@ -167,6 +169,7 @@ const Projects = () => {
                   </p>
                 </div>
 
+                {/* Badges */}
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tech.map((techItem, idx) => (
                     <span
