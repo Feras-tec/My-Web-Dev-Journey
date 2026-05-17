@@ -50,7 +50,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-16 bg-base-200 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header with Profile Image */}
+        {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="relative mb-4 group">
             <div className="absolute inset-0 bg-red-500 rounded-full blur-md opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
@@ -60,27 +60,26 @@ const Projects = () => {
               className="w-24 h-24 rounded-full object-cover border-2 border-red-500/50 relative z-10 shadow-lg"
             />
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-base-content">
             Featured{" "}
             <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
-          <p className="text-white font-extrabold max-w-xl mx-auto leading-relaxed">
+          <p className="text-base-content font-extrabold max-w-xl mx-auto leading-relaxed opacity-90">
             A real-world showcase of my built applications, covering full-stack
             architectures, interactive 3D elements, and clean responsive
             designs.
           </p>
         </div>
 
-        {/* Projects Grid */}
+        {/* Projects Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectList.map((project, index) => (
             <div
               key={index}
               className="card bg-base-100 border border-base-300 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden shadow-[0_0_20px_rgba(239,68,68,0.08)] hover:shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:border-red-500/40"
             >
-              {/* Project Image Card */}
               <figure className="relative h-48 w-full bg-base-300 overflow-hidden border-b border-base-300">
                 <img
                   src={project.image}
@@ -92,7 +91,6 @@ const Projects = () => {
 
               <div className="card-body p-6 justify-between">
                 <div>
-                  {/* Top Icon and Links */}
                   <div className="flex justify-between items-center mb-4">
                     <div className="text-red-500">
                       <svg
@@ -117,7 +115,7 @@ const Projects = () => {
                         href={project.githubLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn btn-ghost btn-sm btn-circle text-white hover:text-red-500 flex items-center justify-center transition-colors"
+                        className="btn btn-ghost btn-sm btn-circle text-base-content hover:text-red-500 flex items-center justify-center transition-colors"
                         aria-label={`Open and read full GitHub source repository architecture code for ${project.title}`}
                       >
                         <svg
@@ -136,7 +134,7 @@ const Projects = () => {
                         href={project.liveLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn btn-ghost btn-sm btn-circle text-white hover:text-red-500 flex items-center justify-center transition-colors"
+                        className="btn btn-ghost btn-sm btn-circle text-base-content hover:text-red-500 flex items-center justify-center transition-colors"
                         aria-label={`Maps directly to deployment production live preview page of ${project.title}`}
                       >
                         <svg
@@ -163,21 +161,20 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Content - Pure crisp white lines with highest level contrast ratio */}
-                  <h3 className="card-title text-xl font-black mb-3 tracking-tight text-white">
+                  <h3 className="card-title text-xl font-black mb-3 tracking-tight text-base-content">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-white font-extrabold leading-relaxed mb-6">
+                  <p className="text-sm text-base-content font-extrabold leading-relaxed mb-6 opacity-90">
                     {project.description}
                   </p>
                 </div>
 
-                {/* Tech Badges with high contrast text colors */}
+                {/* Badges */}
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tech.map((techItem, idx) => (
                     <span
                       key={idx}
-                      className="badge badge-sm badge-outline font-mono font-black text-xs py-2.5 px-2.5 text-white border-base-300 bg-base-300 transition-all duration-300 hover:bg-red-500 hover:text-white hover:border-red-500 hover:shadow-[0_0_10px_rgba(239,68,68,0.3)]"
+                      className="badge badge-sm badge-outline font-mono font-black text-xs py-2.5 px-2.5 text-base-content border-base-300 bg-base-300/30 transition-all duration-300 hover:bg-red-500 hover:text-white hover:border-red-500"
                     >
                       {techItem}
                     </span>
