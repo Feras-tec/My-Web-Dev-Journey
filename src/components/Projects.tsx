@@ -9,6 +9,7 @@ const Projects = () => {
       tech: ["React", "Three.js", "Tailwind CSS", "Vite"],
       githubLink: "https://github.com/Feras-tec/neodrive-dashboard",
       liveLink: "https://maxpro3d.netlify.app/",
+      image: "/maxpro3d.png",
     },
     {
       title: "CREATIVE FERAS",
@@ -17,6 +18,7 @@ const Projects = () => {
       tech: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
       githubLink: "https://github.com/Feras-tec/portfolio",
       liveLink: "https://creativeferas.netlify.app/",
+      image: "/CREATIVE FERAS.jpg",
     },
     {
       title: "YogaTags",
@@ -25,6 +27,7 @@ const Projects = () => {
       tech: ["HTML", "CSS"],
       githubLink: "https://github.com/Feras-tec/Yoga",
       liveLink: "https://yogatag.netlify.app/",
+      image: "/YogaTags.jpg",
     },
     {
       title: "Daily Grind",
@@ -33,6 +36,7 @@ const Projects = () => {
       tech: ["HTML", "CSS", "Tailwind CSS"],
       githubLink: "https://github.com/Feras-tec/daily-grind",
       liveLink: "https://daily-grind0.netlify.app/",
+      image: "/Daily Grind.jpg",
     },
     {
       title: "Celebration 2026",
@@ -41,21 +45,30 @@ const Projects = () => {
       tech: ["JavaScript", "HTML", "CSS"],
       githubLink: "https://github.com/Feras-tec/Celebration-2026",
       liveLink: "https://celebration-2026.netlify.app/",
+      image: "/Celebration 2026.jpg",
     },
   ];
 
   return (
     <section id="projects" className="py-16 bg-base-200 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
+        {/* Section Header with Profile Image */}
+        <div className="flex flex-col items-center text-center mb-16">
+          <div className="relative mb-4 group">
+            <div className="absolute inset-0 bg-red-500 rounded-full blur-md opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
+            <img
+              src="/feras.jpg"
+              alt="Feras - Full-Stack Web Developer"
+              className="w-24 h-24 rounded-full object-cover border-2 border-red-500/50 relative z-10 shadow-lg"
+            />
+          </div>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4">
             Featured{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
-          <p className="text-base-content/70 max-w-md mx-auto">
+          <p className="text-base-content font-bold max-w-xl mx-auto leading-relaxed">
             A real-world showcase of my built applications, covering full-stack
             architectures, interactive 3D elements, and clean responsive
             designs.
@@ -67,21 +80,32 @@ const Projects = () => {
           {projectList.map((project, index) => (
             <div
               key={index}
-              className="card bg-base-100 shadow-xl border border-base-300 hover:-translate-y-2 transition-all duration-300"
+              className="card bg-base-100 border border-base-300 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden shadow-[0_0_20px_rgba(239,68,68,0.08)] hover:shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:border-red-500/40"
             >
-              <div className="card-body justify-between">
+              {/* Project Image Card - Completely clean without backdrop-blur or pulse blur */}
+              <figure className="relative h-48 w-full bg-base-300 overflow-hidden border-b border-base-300">
+                <img
+                  src={project.image}
+                  alt={`Screenshot preview of ${project.title} project`}
+                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </figure>
+
+              <div className="card-body p-6 justify-between">
                 <div>
                   {/* Top Icon and Links */}
                   <div className="flex justify-between items-center mb-4">
-                    <div className="text-primary">
-                      <Folder size={32} />
+                    <div className="text-red-500/90">
+                      <Folder size={28} />
                     </div>
                     <div className="flex gap-2">
                       <a
                         href={project.githubLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn btn-ghost btn-sm btn-circle text-base-content/70 hover:text-primary flex items-center justify-center"
+                        className="btn btn-ghost btn-sm btn-circle text-base-content hover:text-red-500 flex items-center justify-center transition-colors"
+                        aria-label={`View GitHub repository for ${project.title}`}
                       >
                         <svg
                           height="20"
@@ -89,6 +113,7 @@ const Projects = () => {
                           viewBox="0 0 16 16"
                           fill="currentColor"
                         >
+                          <title>GitHub Icon</title>
                           <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
                         </svg>
                       </a>
@@ -96,28 +121,29 @@ const Projects = () => {
                         href={project.liveLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn btn-ghost btn-sm btn-circle text-base-content/70 hover:text-secondary"
+                        className="btn btn-ghost btn-sm btn-circle text-base-content hover:text-red-500 flex items-center justify-center transition-colors"
+                        aria-label={`Open live website of ${project.title}`}
                       >
                         <ExternalLink size={20} />
                       </a>
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <h3 className="card-title text-xl font-bold mb-2 tracking-tight">
+                  {/* Content - Super sharp text and distinct visibility */}
+                  <h3 className="card-title text-xl font-extrabold mb-3 tracking-tight text-base-content">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-base-content/70 leading-relaxed mb-6">
+                  <p className="text-sm text-base-content font-bold leading-relaxed mb-6">
                     {project.description}
                   </p>
                 </div>
 
-                {/* Tech Badges */}
+                {/* Tech Badges with hover glow */}
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tech.map((techItem, idx) => (
                     <span
                       key={idx}
-                      className="badge badge-sm badge-outline font-mono text-xs py-2 px-2"
+                      className="badge badge-sm badge-outline font-mono font-bold text-xs py-2.5 px-2.5 text-base-content border-base-300 transition-all duration-300 hover:bg-red-500/10 hover:text-red-400 hover:border-red-500/50 hover:shadow-[0_0_10px_rgba(239,68,68,0.25)]"
                     >
                       {techItem}
                     </span>
