@@ -1,5 +1,3 @@
-import { Folder, ExternalLink } from "lucide-react";
-
 const Projects = () => {
   const projectList = [
     {
@@ -52,7 +50,6 @@ const Projects = () => {
   return (
     <section id="projects" className="py-16 bg-base-200 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="relative mb-4 group">
             <div className="absolute inset-0 bg-red-500 rounded-full blur-md opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
@@ -75,14 +72,12 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectList.map((project, index) => (
             <div
               key={index}
               className="card bg-base-100 border border-base-300 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden shadow-[0_0_20px_rgba(239,68,68,0.08)] hover:shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:border-red-500/40"
             >
-              {/* Project Image Card */}
               <figure className="relative h-48 w-full bg-base-300 overflow-hidden border-b border-base-300">
                 <img
                   src={project.image}
@@ -94,7 +89,6 @@ const Projects = () => {
 
               <div className="card-body p-6 justify-between">
                 <div>
-                  {/* Top Icon and Links */}
                   <div className="flex justify-between items-center mb-4">
                     <div className="text-red-500">
                       <svg
@@ -165,7 +159,6 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Content - text-base-content auto switches color dynamically */}
                   <h3 className="card-title text-xl font-black mb-3 tracking-tight text-base-content">
                     {project.title}
                   </h3>
@@ -174,7 +167,6 @@ const Projects = () => {
                   </p>
                 </div>
 
-                {/* Tech Badges */}
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tech.map((techItem, idx) => (
                     <span
