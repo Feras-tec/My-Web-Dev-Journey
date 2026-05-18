@@ -50,14 +50,14 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300 border border-base-300"
+              className="card bg-base-200 border border-base-300 transition-all duration-500 relative overflow-hidden cursor-pointer shadow-[0_0_20px_rgba(59,130,246,0.12)] hover:shadow-[0_0_35px_rgba(59,130,246,0.35)] hover:border-blue-500/40 hover:-translate-y-2 group"
             >
               <div className="card-body">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-base-100 rounded-xl shadow-sm">
+                  <div className="p-2 bg-base-100 rounded-xl shadow-sm group-hover:scale-110 transition-transform duration-300">
                     {category.icon}
                   </div>
-                  <h3 className="font-bold text-lg leading-tight">
+                  <h3 className="font-bold text-lg leading-tight text-base-content group-hover:text-blue-500 transition-colors duration-300">
                     {category.title}
                   </h3>
                 </div>
@@ -65,9 +65,9 @@ const Skills = () => {
                   {category.skills.map((skill, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center gap-2 text-sm text-base-content/80"
+                      className="flex items-center gap-2 text-sm text-base-content/80 font-medium"
                     >
-                      <span className="badge badge-xs badge-primary"></span>
+                      <span className="badge badge-xs badge-primary group-hover:bg-blue-500 group-hover:border-blue-500 transition-colors duration-300"></span>
                       {skill}
                     </li>
                   ))}
