@@ -78,7 +78,7 @@ const Projects = () => {
           {projectList.map((project, index) => (
             <div
               key={index}
-              className="card bg-base-100 border border-base-300 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden shadow-[0_0_20px_rgba(239,68,68,0.08)] hover:shadow-[0_0_30px_rgba(239,68,68,0.25)] hover:border-red-500/40"
+              className="card bg-base-100 border border-base-300 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden shadow-[0_0_25px_rgba(239,68,68,0.15)] hover:shadow-[0_0_35px_rgba(239,68,68,0.3)] hover:border-red-500/40"
             >
               <figure className="relative h-48 w-full bg-base-300 overflow-hidden border-b border-base-300">
                 <img
