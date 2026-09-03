@@ -1,78 +1,60 @@
-<<<<<<< HEAD
-# My-Web-Dev-Journey
-Full-stack portfolio project focused on modern UI/UX and clean code architecture.
-=======
-# React + TypeScript + Vite
+# My Web Development Journey
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive developer portfolio showcasing practical web projects, technical skills and contact information through a clean, performance-focused interface.
 
-Currently, two official plugins are available:
+[View Live Portfolio](https://my-web-dev-journey-nine.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Clear hero section and professional developer portfolio presentation
+- Technical-skills overview
+- Project gallery with source-code and live-demo links
+- Contact section and social links
+- Responsive design for desktop, tablet and mobile
+- Installable Progressive Web App (PWA)
+- Vercel Analytics integration
+- Accessible navigation and semantic structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+| Area | Technologies |
+| --- | --- |
+| Core | React 19, TypeScript, Vite 8 |
+| Styling | Tailwind CSS 4, daisyUI 5 |
+| Icons | Lucide React |
+| PWA | Vite PWA |
+| Deployment & analytics | Vercel, Vercel Analytics |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Local development
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Prerequisites: Node.js and npm.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+~~~bash
+git clone https://github.com/Feras-tec/My-Web-Dev-Journey.git
+cd My-Web-Dev-Journey
+npm install
+npm run dev
+~~~
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Available scripts
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+~~~bash
+npm run dev
+npm run build
+npm run lint
+npm run preview
+~~~
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
->>>>>>> 8a45f18 (Initial commit: React setup with Tailwind and folder structure)
+The main interface is organized into reusable React components for navigation, hero content, skills, projects, contact information and the footer.
+
+## Deployment
+
+The production build is deployed on Vercel from the `main` branch:
+
+[https://my-web-dev-journey-nine.vercel.app/](https://my-web-dev-journey-nine.vercel.app/)
+
+## Author
+
+Developed by [Feras-tec](https://github.com/Feras-tec).
